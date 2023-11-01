@@ -1,0 +1,9 @@
+docker run -m 100MB openjdk:8u121 java -XshowSettings:vm -version
+# this time heap size might be greater than 100MB
+
+docker run -m 400MB openjdk:10 java -XshowSettings:vm -version
+# this time heap size always be less than 400MB
+
+docker run -m 400MB openjdk:8u191-alpine java -XshowSettings:vm -version
+# this time heap size always be less than 400MB
+# java 8 special version edition where docker memory size optimization exists.
